@@ -1,0 +1,60 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jasmine": true,
+    "react-native/react-native": true
+  },
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:import/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react/recommended",
+    "@react-native-community"
+  ],
+  "rules": {
+    "jsx-quotes": [1, "prefer-double"],
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2,
+    "react-native/no-raw-text": 2,
+    "react-native/no-single-element-style-arrays": 2
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "plugins": [
+    "prettier",
+    "import",
+    "react",
+    "react-native",
+    "@typescript-eslint",
+    "@react-native-community"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    },
+    "import/ignore": ["react-native", "@react-navigation"],
+    "react-native/style-sheet-object-names": [
+      "EStyleSheet",
+      "OtherStyleSheet",
+      "PStyleSheet"
+    ]
+  }
+}
