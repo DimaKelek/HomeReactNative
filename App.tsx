@@ -1,10 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
+import {ThemeProvider} from './src/Common/Themes/ThemeContext';
+import {LIGHT_THEME} from "./src/Common/Themes/Light.Theme";
+import {AppNavigation} from "./src/Navigation/Navigation";
 
 export const App = () => {
     return (
-        <View>
-
-        </View>
+        <ThemeProvider initial={LIGHT_THEME}>
+            <AppNavigation/>
+        </ThemeProvider>
     );
 };
