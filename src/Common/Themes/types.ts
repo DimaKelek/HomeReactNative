@@ -3,6 +3,7 @@ import React from 'react';
 export type ColorTheme = {
   background: string;
   font: string;
+  input: string;
 };
 
 export type Theme = {

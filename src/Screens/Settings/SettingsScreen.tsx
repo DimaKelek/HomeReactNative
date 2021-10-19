@@ -28,7 +28,7 @@ export const SettingsScreen: React.FC<SettingsProps> = () => {
               {t('Last name')}: {'Some Name'}
             </Text>
             <Text style={Styles.discriptionText}>
-              Email: {'blablabla@gmail.com'}
+              {t('Email')}: {'blablabla@gmail.com'}
             </Text>
           </View>
         </View>

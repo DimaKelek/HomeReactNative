@@ -3,4 +3,5 @@ export enum Screens {
   Home = 'Home',
   Settings = 'Settings',
   Details = 'Details',
+  Auth = 'Authorization',
 }

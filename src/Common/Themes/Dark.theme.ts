@@ -4,6 +4,7 @@ import {Themes} from './enum';
 const DARK_COLOR_THEME: ColorTheme = {
   background: '#282727',
   font: '#ffffff',
+  input: '#262626',
 };
 
 export const DARK_THEME: Theme = {
