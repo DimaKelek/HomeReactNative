@@ -1,7 +1,10 @@
 import {combineReducers, createStore} from 'redux';
+import {authReducer} from './authReducer';
 
 const rootReducer = combineReducers({
-  settings: () => {},
+  auth: authReducer,
 });
 
 export const store = createStore(rootReducer);
+
+export type AppStateType = ReturnType<typeof rootReducer>;

@@ -5,10 +5,17 @@ import {SettingsStyles} from './styles';
 import {SettingsProps} from '../../Navigation/types';
 import {useComponentStyles} from '../../Common/Hooks/Hooks';
 import {useTranslation} from 'react-i18next';
+import {useDispatch} from 'react-redux';
+import {changeIsLoggedIn} from '../../Redux/authReducer';
 
 export const SettingsScreen: React.FC<SettingsProps> = () => {
   const Styles = useComponentStyles(SettingsStyles);
+  const dispatch = useDispatch();
   const {t} = useTranslation();
+
+  const logoutHandler = () => {
+    dispatch(changeIsLoggedIn(false));
+  };
 
   return (
     <View style={Styles.settings}>
@@ -22,10 +29,10 @@ export const SettingsScreen: React.FC<SettingsProps> = () => {
         <View style={[Styles.discriptionContainer, Styles.center]}>
           <View style={Styles.discription}>
             <Text style={Styles.discriptionText}>
-              {t('First name')}: {'Some Name'}
+              {t('First name')}: {'Dmitry'}
             </Text>
             <Text style={Styles.discriptionText}>
-              {t('Last name')}: {'Some Name'}
+              {t('Last name')}: {'Kelek'}
             </Text>
             <Text style={Styles.discriptionText}>
               {t('Email')}: {'blablabla@gmail.com'}
@@ -35,7 +42,7 @@ export const SettingsScreen: React.FC<SettingsProps> = () => {
       </View>
       <ThemeBar />
       <View style={Styles.button}>
-        <Button title={t('Exit')} />
+        <Button title={t('Exit')} onPress={logoutHandler} />
       </View>
     </View>
   );

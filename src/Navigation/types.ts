@@ -12,6 +12,10 @@ export type StackNavigationType = {
   Details: any;
 };
 
+export type AuthStackType = {
+  Authorization: any;
+};
+
 export type HomeProps = NativeStackScreenProps<
   StackNavigationType,
   Screens.Home
