@@ -20,9 +20,11 @@ export const ThemeBarStyles = StyleSheet.create<ThemeBarType>({
   title: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#000',
   },
   themeName: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: '#000',
   },
 });

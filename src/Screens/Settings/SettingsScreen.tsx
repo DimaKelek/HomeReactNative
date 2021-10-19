@@ -4,9 +4,11 @@ import {ThemeBar} from '../../Common/Themes/ThemeBar/ThemeBar';
 import {SettingsStyles} from './styles';
 import {SettingsProps} from '../../Navigation/types';
 import {useComponentStyles} from '../../Common/Hooks/Hooks';
+import {useTranslation} from 'react-i18next';
 
 export const SettingsScreen: React.FC<SettingsProps> = () => {
   const Styles = useComponentStyles(SettingsStyles);
+  const {t} = useTranslation();
 
   return (
     <View style={Styles.settings}>
@@ -20,9 +22,11 @@ export const SettingsScreen: React.FC<SettingsProps> = () => {
         <View style={[Styles.discriptionContainer, Styles.center]}>
           <View style={Styles.discription}>
             <Text style={Styles.discriptionText}>
-              First name: {'Some Name'}
+              {t('First name')}: {'Some Name'}
             </Text>
-            <Text style={Styles.discriptionText}>Last name: {'Some Name'}</Text>
+            <Text style={Styles.discriptionText}>
+              {t('Last name')}: {'Some Name'}
+            </Text>
             <Text style={Styles.discriptionText}>
               Email: {'blablabla@gmail.com'}
             </Text>
@@ -31,7 +35,7 @@ export const SettingsScreen: React.FC<SettingsProps> = () => {
       </View>
       <ThemeBar />
       <View style={Styles.button}>
-        <Button title={'Exit'} />
+        <Button title={t('Exit')} />
       </View>
     </View>
   );

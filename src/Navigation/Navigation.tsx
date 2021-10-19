@@ -9,20 +9,31 @@ import {HomeScreen} from '../Screens/Home/HomeScreen';
 import {SettingsScreen} from '../Screens/Settings/SettingsScreen';
 import {DetailsScreen} from '../Screens/Details/DetailsScreen';
 import {Screens} from './enum';
+import {useTranslation} from 'react-i18next';
 
 const Tab = createBottomTabNavigator<TabNavigationType>();
 const Stack = createNativeStackNavigator<StackNavigationType>();
 
 const MainStack = () => {
+  const {t} = useTranslation();
   return (
-    <Stack.Navigator>
-      <Stack.Screen name={Screens.Home} component={HomeScreen} />
-      <Stack.Screen name={Screens.Details} component={DetailsScreen} />
+    <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
+      <Stack.Screen
+        name={Screens.Home}
+        component={HomeScreen}
+        options={{title: t(Screens.Home)}}
+      />
+      <Stack.Screen
+        name={Screens.Details}
+        component={DetailsScreen}
+        options={{title: t(Screens.Details)}}
+      />
     </Stack.Navigator>
   );
 };
 
 export const AppNavigation = () => {
+  const {t} = useTranslation();
   return (
     <NavigationContainer>
       <Tab.Navigator>
@@ -36,7 +47,7 @@ export const AppNavigation = () => {
             tabBarLabelStyle: styles.label,
             tabBarStyle: styles.tabBar,
             headerShown: false,
-            title: Screens.Home,
+            title: t(Screens.Home),
           }}
         />
         <Tab.Screen
@@ -49,6 +60,7 @@ export const AppNavigation = () => {
             tabBarLabelStyle: styles.label,
             tabBarStyle: styles.tabBar,
             headerShown: false,
+            title: t(Screens.Settings),
           }}
         />
       </Tab.Navigator>

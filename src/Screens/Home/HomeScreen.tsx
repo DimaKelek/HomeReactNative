@@ -4,9 +4,11 @@ import {HomeStyles} from './styles';
 import {Screens} from '../../Navigation/enum';
 import {HomeProps} from '../../Navigation/types';
 import {useComponentStyles} from '../../Common/Hooks/Hooks';
+import {useTranslation} from 'react-i18next';
 
 export const HomeScreen: React.FC<HomeProps> = ({navigation}) => {
   const Styles = useComponentStyles(HomeStyles);
+  const {t} = useTranslation();
 
   const onPressHandler = () => {
     navigation.navigate(Screens.Details);
@@ -14,8 +16,8 @@ export const HomeScreen: React.FC<HomeProps> = ({navigation}) => {
 
   return (
     <View style={Styles.home}>
-      <Text style={Styles.text}>Home Screen</Text>
-      <Button title={Screens.Details} onPress={onPressHandler} />
+      <Text style={Styles.text}>{t('Home Screen')}</Text>
+      <Button title={t(Screens.Details)} onPress={onPressHandler} />
     </View>
   );
 };
