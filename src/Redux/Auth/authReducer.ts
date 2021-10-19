@@ -1,13 +1,14 @@
 import {AC} from './enum';
+import {AuthActionsType, AuthStateType} from './types';
 
-const initialState = {
+export const initialState = {
   isLoggedIn: false,
 };
 
 export const authReducer = (
   state = initialState,
   action: AuthActionsType,
-): initialStateType => {
+): AuthStateType => {
   switch (action.type) {
     case AC.isLoggedIn: {
       return {...state, isLoggedIn: action.value};
@@ -16,11 +17,3 @@ export const authReducer = (
       return state;
   }
 };
-
-export const changeIsLoggedIn = (value: boolean) => {
-  return {type: AC.isLoggedIn, value};
-};
-
-type AuthActionsType = ReturnType<typeof changeIsLoggedIn>;
-
-type initialStateType = typeof initialState;

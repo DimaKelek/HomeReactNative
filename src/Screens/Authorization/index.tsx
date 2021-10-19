@@ -1,8 +1,8 @@
-import React, {FC, FormEvent} from 'react';
+import React, {FC} from 'react';
 import {useDispatch} from 'react-redux';
+import {changeIsLoggedIn} from '../../Redux/Auth/actions';
 import {AuthView} from './AuthView';
 import {FormErrorsType, SubmitType} from './types';
-import {changeIsLoggedIn} from '../../Redux/authReducer';
 
 export const AuthScreen: FC<any> = () => {
   const dispatch = useDispatch();

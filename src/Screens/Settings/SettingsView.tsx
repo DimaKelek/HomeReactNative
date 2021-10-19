@@ -1,12 +1,16 @@
 import React, {FC} from 'react';
-import {Button, Image, Text, View} from 'react-native';
+import {Button, Image, Text, TouchableHighlight, View} from 'react-native';
 import {ThemeBar} from '../../Common/Themes/ThemeBar/ThemeBar';
 import {SettingsStyles} from './styles';
 import {useComponentStyles} from '../../Common/Hooks/Hooks';
 import {useTranslation} from 'react-i18next';
 import {SettingsViewType} from './types';
+import {useSelector} from 'react-redux';
+import {selectAvatar} from '../../Redux/Settings/selectors';
 
-export const SettingsView: FC<SettingsViewType> = ({logoutHandler}) => {
+export const SettingsView: FC<SettingsViewType> = props => {
+  const {logoutHandler, changeAvatarHandler} = props;
+  const avatar = useSelector(selectAvatar);
   const Styles = useComponentStyles(SettingsStyles);
   const {t} = useTranslation();
 
@@ -14,10 +18,9 @@ export const SettingsView: FC<SettingsViewType> = ({logoutHandler}) => {
     <View style={Styles.settings}>
       <View style={Styles.profileContainer}>
         <View style={[Styles.imageContainer, Styles.center]}>
-          <Image
-            source={require('../../Common/Images/logo.png')}
-            style={Styles.image}
-          />
+          <TouchableHighlight onPress={changeAvatarHandler}>
+            <Image source={{uri: avatar}} style={Styles.image} />
+          </TouchableHighlight>
         </View>
         <View style={[Styles.discriptionContainer, Styles.center]}>
           <View style={Styles.discription}>
