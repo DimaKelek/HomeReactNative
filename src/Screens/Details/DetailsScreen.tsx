@@ -1,12 +1,11 @@
-import React, {FC, useMemo} from 'react';
+import React, {FC} from 'react';
 import {Text, View} from 'react-native';
 import {detailsStyles} from './styles';
-import {useTheme} from '../../Common/Themes/ThemeContext';
 import {DetailsProps} from '../../Navigation/types';
+import {useComponentStyles} from '../../Common/Hooks/Hooks';
 
 export const DetailsScreen: FC<DetailsProps> = () => {
-  const {theme} = useTheme();
-  const Styles = useMemo(() => detailsStyles(theme), [theme]);
+  const Styles = useComponentStyles(detailsStyles);
 
   return (
     <View style={Styles.details}>

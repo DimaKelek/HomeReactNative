@@ -1,13 +1,12 @@
-import React, {useMemo} from 'react';
+import React from 'react';
 import {Button, Image, Text, View} from 'react-native';
 import {ThemeBar} from '../../Common/Themes/ThemeBar/ThemeBar';
-import {useTheme} from '../../Common/Themes/ThemeContext';
 import {SettingsStyles} from './styles';
 import {SettingsProps} from '../../Navigation/types';
+import {useComponentStyles} from '../../Common/Hooks/Hooks';
 
 export const SettingsScreen: React.FC<SettingsProps> = () => {
-  const {theme} = useTheme();
-  const Styles = useMemo(() => SettingsStyles(theme), [theme]);
+  const Styles = useComponentStyles(SettingsStyles);
 
   return (
     <View style={Styles.settings}>
