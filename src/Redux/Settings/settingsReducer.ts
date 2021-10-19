@@ -2,7 +2,7 @@ import {AC} from './enum';
 import {SettingsActionsType, SettingsStateType} from './types';
 
 export const initialState = {
-  avatar: 'https://goo.su/8hKe',
+  avatar: 'https://goo.su/8HKj',
 };
 
 export const settingsReducer = (

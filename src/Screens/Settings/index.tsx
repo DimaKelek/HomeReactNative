@@ -1,6 +1,6 @@
 import React from 'react';
 import {SettingsProps} from '../../Navigation/types';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {SettingsView} from './SettingsView';
 import {Alert} from 'react-native';
 import {changeIsLoggedIn} from '../../Redux/Auth/actions';
@@ -9,8 +9,10 @@ import {
   launchImageLibrary,
 } from 'react-native-image-picker';
 import {changeAvatar} from '../../Redux/Settings/actions';
+import {selectAvatar} from '../../Redux/Settings/selectors';
 
 export const SettingsScreen: React.FC<SettingsProps> = () => {
+  const avatar = useSelector(selectAvatar);
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
@@ -41,6 +43,7 @@ export const SettingsScreen: React.FC<SettingsProps> = () => {
     <SettingsView
       logoutHandler={logoutHandler}
       changeAvatarHandler={changeAvatarHandler}
+      avatar={avatar}
     />
   );
 };

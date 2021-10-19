@@ -5,12 +5,9 @@ import {SettingsStyles} from './styles';
 import {useComponentStyles} from '../../Common/Hooks/Hooks';
 import {useTranslation} from 'react-i18next';
 import {SettingsViewType} from './types';
-import {useSelector} from 'react-redux';
-import {selectAvatar} from '../../Redux/Settings/selectors';
 
 export const SettingsView: FC<SettingsViewType> = props => {
-  const {logoutHandler, changeAvatarHandler} = props;
-  const avatar = useSelector(selectAvatar);
+  const {logoutHandler, changeAvatarHandler, avatar} = props;
   const Styles = useComponentStyles(SettingsStyles);
   const {t} = useTranslation();
 
@@ -18,7 +15,9 @@ export const SettingsView: FC<SettingsViewType> = props => {
     <View style={Styles.settings}>
       <View style={Styles.profileContainer}>
         <View style={[Styles.imageContainer, Styles.center]}>
-          <TouchableHighlight onPress={changeAvatarHandler}>
+          <TouchableHighlight
+            onPress={changeAvatarHandler}
+            style={Styles.image}>
             <Image source={{uri: avatar}} style={Styles.image} />
           </TouchableHighlight>
         </View>
