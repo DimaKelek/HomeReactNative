@@ -17,6 +17,7 @@ export const HomeStyles = (theme: Theme) => {
     text: {
       color: theme.color.font,
       fontSize: 24,
+      marginBottom: 25,
     },
   });
 };

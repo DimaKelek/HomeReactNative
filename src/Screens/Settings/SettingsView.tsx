@@ -1,21 +1,14 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Button, Image, Text, View} from 'react-native';
 import {ThemeBar} from '../../Common/Themes/ThemeBar/ThemeBar';
 import {SettingsStyles} from './styles';
-import {SettingsProps} from '../../Navigation/types';
 import {useComponentStyles} from '../../Common/Hooks/Hooks';
 import {useTranslation} from 'react-i18next';
-import {useDispatch} from 'react-redux';
-import {changeIsLoggedIn} from '../../Redux/authReducer';
+import {SettingsViewType} from './types';
 
-export const SettingsScreen: React.FC<SettingsProps> = () => {
+export const SettingsView: FC<SettingsViewType> = ({logoutHandler}) => {
   const Styles = useComponentStyles(SettingsStyles);
-  const dispatch = useDispatch();
   const {t} = useTranslation();
-
-  const logoutHandler = () => {
-    dispatch(changeIsLoggedIn(false));
-  };
 
   return (
     <View style={Styles.settings}>

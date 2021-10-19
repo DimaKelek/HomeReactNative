@@ -1,18 +1,14 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Button, Text, View} from 'react-native';
 import {HomeStyles} from './styles';
 import {Screens} from '../../Navigation/enum';
-import {HomeProps} from '../../Navigation/types';
 import {useComponentStyles} from '../../Common/Hooks/Hooks';
 import {useTranslation} from 'react-i18next';
+import {HomeViewPropsType} from './types';
 
-export const HomeScreen: React.FC<HomeProps> = ({navigation}) => {
+export const HomeView: FC<HomeViewPropsType> = ({onPressHandler}) => {
   const Styles = useComponentStyles(HomeStyles);
   const {t} = useTranslation();
-
-  const onPressHandler = () => {
-    navigation.navigate(Screens.Details);
-  };
 
   return (
     <View style={Styles.home}>

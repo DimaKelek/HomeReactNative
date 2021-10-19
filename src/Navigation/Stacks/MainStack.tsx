@@ -1,10 +1,10 @@
 import {useTranslation} from 'react-i18next';
 import {Screens} from '../enum';
-import {HomeScreen} from '../../Screens/Home/HomeScreen';
-import {DetailsScreen} from '../../Screens/Details/DetailsScreen';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {StackNavigationType} from '../types';
+import {HomeScreen} from '../../Screens/Home';
+import {DetailsScreen} from '../../Screens/Details';
 
 export const MainStack = () => {
   const Stack = createNativeStackNavigator<StackNavigationType>();

@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export const authReducer = (
-  state: initialStateType = initialState,
+  state = initialState,
   action: AuthActionsType,
 ): initialStateType => {
   switch (action.type) {
@@ -17,8 +17,9 @@ export const authReducer = (
   }
 };
 
-export const changeIsLoggedIn = (value: boolean) =>
-  ({type: AC.isLoggedIn, value} as const);
+export const changeIsLoggedIn = (value: boolean) => {
+  return {type: AC.isLoggedIn, value};
+};
 
 type AuthActionsType = ReturnType<typeof changeIsLoggedIn>;
 

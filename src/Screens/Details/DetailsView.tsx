@@ -1,11 +1,11 @@
 import React, {FC} from 'react';
-import {Text, View} from 'react-native';
-import {detailsStyles} from './styles';
-import {DetailsProps} from '../../Navigation/types';
 import {useComponentStyles} from '../../Common/Hooks/Hooks';
+import {detailsStyles} from './styles';
 import {useTranslation} from 'react-i18next';
+import {Text, View} from 'react-native';
+import {DetailsViewPropsType} from './types';
 
-export const DetailsScreen: FC<DetailsProps> = () => {
+export const DetailsView: FC<DetailsViewPropsType> = () => {
   const Styles = useComponentStyles(detailsStyles);
   const {t} = useTranslation();
   return (

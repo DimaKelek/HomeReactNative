@@ -2,11 +2,11 @@ import {Screens} from '../enum';
 import {MainStack} from '../Stacks/MainStack';
 import {Image} from 'react-native';
 import {styles} from '../styles';
-import {SettingsScreen} from '../../Screens/Settings/SettingsScreen';
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {TabNavigationType} from '../types';
 import {useTranslation} from 'react-i18next';
+import {SettingsScreen} from '../../Screens/Settings';
 
 export const MainTab = () => {
   const Tab = createBottomTabNavigator<TabNavigationType>();

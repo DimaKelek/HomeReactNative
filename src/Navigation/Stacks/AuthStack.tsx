@@ -1,8 +1,8 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {AuthStackType} from '../types';
-import {AuthScreen} from '../../Screens/Authorization/AuthScreen';
 import React from 'react';
 import {Screens} from '../enum';
+import {AuthScreen} from '../../Screens/Authorization';
 
 export const AuthStack = () => {
   const Stack = createNativeStackNavigator<AuthStackType>();

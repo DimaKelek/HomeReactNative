@@ -13,7 +13,8 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:react/recommended",
-    "@react-native-community"
+    "@react-native-community",
+    "plugin:react-redux/recommended"
   ],
   "rules": {
     "jsx-quotes": [1, "prefer-double"],
@@ -22,7 +23,8 @@
     "react-native/no-inline-styles": 2,
     "react-native/no-color-literals": 2,
     "react-native/no-raw-text": 2,
-    "react-native/no-single-element-style-arrays": 2
+    "react-native/no-single-element-style-arrays": 2,
+    "react-redux/connect-prefer-named-arguments": 2
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -37,7 +39,8 @@
     "react",
     "react-native",
     "@typescript-eslint",
-    "@react-native-community"
+    "@react-native-community",
+    "react-redux"
   ],
   "settings": {
     "import/resolver": {
