@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
-import {Button, Image, Text, TouchableHighlight, View} from 'react-native';
+import {Button, Text, TouchableHighlight, View} from 'react-native';
 import {ThemeBar} from '../../Common/Themes/ThemeBar/ThemeBar';
 import {SettingsStyles} from './styles';
 import {useComponentStyles} from '../../Common/Hooks/Hooks';
 import {useTranslation} from 'react-i18next';
 import {SettingsViewType} from './types';
+import {DefaultAvatar} from '../../Common/Icons/Svg/DefaultAvatar';
 
 export const SettingsView: FC<SettingsViewType> = props => {
   const {logoutHandler, changeAvatarHandler, avatar} = props;
@@ -18,7 +19,7 @@ export const SettingsView: FC<SettingsViewType> = props => {
           <TouchableHighlight
             onPress={changeAvatarHandler}
             style={Styles.image}>
-            <Image source={{uri: avatar}} style={Styles.image} />
+            {avatar ?? <DefaultAvatar />}
           </TouchableHighlight>
         </View>
         <View style={[Styles.discriptionContainer, Styles.center]}>
