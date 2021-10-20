@@ -6,7 +6,9 @@ type AuthScreenStylesType = {
   container: ViewStyle;
   button: ViewStyle;
   input: ViewStyle;
+  inputContainer: ViewStyle;
   title: TextStyle;
+  errorText: TextStyle;
 };
 
 export const authStyles = (theme: Theme) => {
@@ -31,17 +33,24 @@ export const authStyles = (theme: Theme) => {
       width: 200,
       marginTop: 25,
     },
+    inputContainer: {
+      height: 60,
+      marginBottom: 10,
+    },
     input: {
       width: '100%',
       height: 40,
       paddingHorizontal: 15,
-      marginBottom: 10,
       backgroundColor: theme.color.input,
       color: theme.color.font,
       borderStyle: 'solid',
       borderColor: '#78adea',
       borderWidth: 2,
       borderRadius: 5,
+    },
+    errorText: {
+      color: '#d9264b',
+      marginHorizontal: 10,
     },
   });
 };

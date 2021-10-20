@@ -20,7 +20,7 @@ export const AuthView: FC<AuthViewPropsType> = ({validate, signInHandler}) => {
           <View style={Styles.auth}>
             <Text style={Styles.title}>Sign In</Text>
             <View style={Styles.container}>
-              <View>
+              <View style={Styles.inputContainer}>
                 <TextInput
                   style={Styles.input}
                   placeholder={t('First name')}
@@ -31,7 +31,7 @@ export const AuthView: FC<AuthViewPropsType> = ({validate, signInHandler}) => {
                   <Text>{errors.firstName}</Text>
                 ) : null}
               </View>
-              <View>
+              <View style={Styles.inputContainer}>
                 <TextInput
                   style={Styles.input}
                   placeholder={t('Last name')}
@@ -39,10 +39,10 @@ export const AuthView: FC<AuthViewPropsType> = ({validate, signInHandler}) => {
                   onChangeText={handleChange('lastName')}
                 />
                 {errors.lastName && touched.lastName ? (
-                  <Text>{errors.lastName}</Text>
+                  <Text style={Styles.errorText}>{errors.lastName}</Text>
                 ) : null}
               </View>
-              <View>
+              <View style={Styles.inputContainer}>
                 <TextInput
                   style={Styles.input}
                   placeholder={t('Email')}
