@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 import {useDispatch} from 'react-redux';
-import {changeIsLoggedIn} from '../../Redux/Auth/actions';
 import {AuthView} from './AuthView';
 import {FormErrorsType, SubmitType} from './types';
+import {signInUser} from '../../Redux/Sagas/actions';
 
 export const AuthScreen: FC<any> = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ export const AuthScreen: FC<any> = () => {
 
   const signInHandler = (submit: SubmitType) => {
     submit();
-    dispatch(changeIsLoggedIn(true));
+    dispatch(signInUser());
   };
 
   return <AuthView signInHandler={signInHandler} validate={validate} />;

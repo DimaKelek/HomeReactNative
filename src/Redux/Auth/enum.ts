@@ -1,3 +1,5 @@
 export enum AC {
-  isLoggedIn = 'CHANGE-ISLOGGEDIN',
+  SignInSucceeded = 'SIGN-IN-SUCCEEDED',
+  LogOutSucceeded = 'LOG-OUT-SUCCEEDED',
+  Failed = 'FAILED',
 }

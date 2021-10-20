@@ -1,5 +1,5 @@
 export type SettingsViewType = {
   logoutHandler: () => void;
   changeAvatarHandler: () => void;
-  avatar: string;
+  avatar: string | null;
 };

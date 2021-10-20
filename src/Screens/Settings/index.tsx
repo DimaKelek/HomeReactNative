@@ -3,20 +3,20 @@ import {SettingsProps} from '../../Navigation/types';
 import {useDispatch, useSelector} from 'react-redux';
 import {SettingsView} from './SettingsView';
 import {Alert} from 'react-native';
-import {changeIsLoggedIn} from '../../Redux/Auth/actions';
 import {
   ImageLibraryOptions,
   launchImageLibrary,
 } from 'react-native-image-picker';
 import {changeAvatar} from '../../Redux/Settings/actions';
 import {selectAvatar} from '../../Redux/Settings/selectors';
+import {logOutUser} from '../../Redux/Sagas/actions';
 
 export const SettingsScreen: React.FC<SettingsProps> = () => {
   const avatar = useSelector(selectAvatar);
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
-    dispatch(changeIsLoggedIn(false));
+    dispatch(logOutUser());
   };
 
   const changeAvatarHandler = () => {

@@ -3,6 +3,8 @@ import {AuthActionsType, AuthStateType} from './types';
 
 export const initialState = {
   isLoggedIn: false,
+  userData: null,
+  error: '',
 };
 
 export const authReducer = (
@@ -10,8 +12,14 @@ export const authReducer = (
   action: AuthActionsType,
 ): AuthStateType => {
   switch (action.type) {
-    case AC.isLoggedIn: {
-      return {...state, isLoggedIn: action.value};
+    case AC.SignInSucceeded: {
+      return {...state, userData: action.user, isLoggedIn: true};
+    }
+    case AC.LogOutSucceeded: {
+      return {...state, userData: null, isLoggedIn: false};
+    }
+    case AC.Failed: {
+      return {...state, error: action.error};
     }
     default:
       return state;
