@@ -1,9 +1,8 @@
 import {FormEvent} from 'react';
 
 export type FormErrorsType = {
-  firstName?: string;
-  lastName?: string;
   email?: string;
+  password?: string;
 };
 
 export type AuthViewPropsType = {

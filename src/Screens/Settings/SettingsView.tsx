@@ -25,7 +25,7 @@ export const SettingsView: FC<SettingsViewType> = props => {
         <View style={[Styles.discriptionContainer, Styles.center]}>
           <View style={Styles.discription}>
             <Text style={Styles.discriptionText}>
-              {t('First name')}: {'Dmitry'}
+              {t('First name')}: {'name'}
             </Text>
             <Text style={Styles.discriptionText}>
               {t('Last name')}: {'Kelek'}

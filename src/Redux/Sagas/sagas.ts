@@ -3,11 +3,11 @@ import {SagaActions} from './enum';
 import {failed, logOutSucceeded, signInSucceeded} from '../Auth/actions';
 
 export function* workerSaga() {
-  yield takeEvery(SagaActions.SignIn, signInUser);
-  yield takeEvery(SagaActions.LogOut, logOutUser);
+  yield takeEvery(SagaActions.SignIn, signInUserSaga);
+  yield takeEvery(SagaActions.LogOut, logOutUserSaga);
 }
 
-function* signInUser() {
+function* signInUserSaga() {
   try {
     yield put(signInSucceeded(null));
   } catch (e) {
@@ -15,7 +15,7 @@ function* signInUser() {
   }
 }
 
-function* logOutUser() {
+function* logOutUserSaga() {
   try {
     yield put(logOutSucceeded());
   } catch (e) {

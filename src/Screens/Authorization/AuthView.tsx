@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
-import {Button, Text, TextInput, View} from 'react-native';
+import {Button, Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {useComponentStyles} from '../../Common/Hooks/Hooks';
 import {authStyles} from './styles';
 import {Formik} from 'formik';
 import {AuthViewPropsType} from './types';
+import {MyInput} from './Input/MyInput';
 
 export const AuthView: FC<AuthViewPropsType> = ({validate, signInHandler}) => {
   const Styles = useComponentStyles(authStyles);
@@ -12,47 +13,30 @@ export const AuthView: FC<AuthViewPropsType> = ({validate, signInHandler}) => {
 
   return (
     <Formik
-      initialValues={{firstName: '', lastName: '', email: ''}}
+      initialValues={{email: 'kelek123@lolkek.com', password: '123qwer'}}
       onSubmit={values => console.log(values)}
       validate={validate}>
-      {({handleChange, handleSubmit, errors, touched}) => {
+      {({handleChange, handleSubmit, errors, touched, values}) => {
         return (
           <View style={Styles.auth}>
             <Text style={Styles.title}>Sign In</Text>
             <View style={Styles.container}>
-              <View style={Styles.inputContainer}>
-                <TextInput
-                  style={Styles.input}
-                  placeholder={t('First name')}
-                  placeholderTextColor={Styles.title.color}
-                  onChangeText={handleChange('firstName')}
-                />
-                {errors.firstName && touched.firstName ? (
-                  <Text>{errors.firstName}</Text>
-                ) : null}
-              </View>
-              <View style={Styles.inputContainer}>
-                <TextInput
-                  style={Styles.input}
-                  placeholder={t('Last name')}
-                  placeholderTextColor={Styles.title.color}
-                  onChangeText={handleChange('lastName')}
-                />
-                {errors.lastName && touched.lastName ? (
-                  <Text style={Styles.errorText}>{errors.lastName}</Text>
-                ) : null}
-              </View>
-              <View style={Styles.inputContainer}>
-                <TextInput
-                  style={Styles.input}
-                  placeholder={t('Email')}
-                  placeholderTextColor={Styles.title.color}
-                  onChangeText={handleChange('email')}
-                />
-                {errors.email && touched.email ? (
-                  <Text>{errors.email}</Text>
-                ) : null}
-              </View>
+              <MyInput
+                value={values.email}
+                placeholder={t('Email')}
+                placeholderTextColor={Styles.title.color}
+                onChangeText={handleChange('email')}
+                errors={errors}
+                touched={touched}
+              />
+              <MyInput
+                value={values.password}
+                placeholder={t('Password')}
+                placeholderTextColor={Styles.title.color}
+                onChangeText={handleChange('password')}
+                touched={touched}
+                errors={errors}
+              />
             </View>
             <View style={Styles.button}>
               <Button

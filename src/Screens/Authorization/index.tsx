@@ -9,8 +9,8 @@ export const AuthScreen: FC<any> = () => {
 
   const validate = (values: any) => {
     const errors: FormErrorsType = {};
-    if (!values.firstName) {
-      errors.firstName = 'First Name is required!!';
+    if (!values.email) {
+      errors.email = 'Email is required!!';
     }
     return errors;
   };
