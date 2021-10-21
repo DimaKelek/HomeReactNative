@@ -3,6 +3,7 @@ import {Theme} from '../../Common/Themes/types';
 
 type HomeStylesType = {
   home: ViewStyle;
+  exit: ViewStyle;
   text: TextStyle;
 };
 
@@ -18,6 +19,9 @@ export const HomeStyles = (theme: Theme) => {
       color: theme.color.font,
       fontSize: 24,
       marginBottom: 25,
+    },
+    exit: {
+      marginVertical: 30,
     },
   });
 };

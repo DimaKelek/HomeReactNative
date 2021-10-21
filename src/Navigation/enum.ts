@@ -4,6 +4,7 @@ export enum Screens {
   Settings = 'Settings',
   Details = 'Details',
   Auth = 'Authorization',
+  Register = 'Register',
 }
 
 export enum IconsPath {

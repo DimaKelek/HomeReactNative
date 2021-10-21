@@ -1,20 +1,20 @@
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {Theme} from '../../Common/Themes/types';
 
-type AuthScreenStylesType = {
-  auth: ViewStyle;
+type RegistrationStylesType = {
+  registration: ViewStyle;
+  text: TextStyle;
+  title: TextStyle;
   container: ViewStyle;
   button: ViewStyle;
-  title: TextStyle;
-  errorMessage: TextStyle;
 };
 
-export const authStyles = (theme: Theme) => {
-  return StyleSheet.create<AuthScreenStylesType>({
-    auth: {
+export const registrationStyles = (theme: Theme) => {
+  return StyleSheet.create<RegistrationStylesType>({
+    registration: {
       flex: 1,
       padding: 15,
-      justifyContent: 'center',
+      width: '100%',
       alignItems: 'center',
       backgroundColor: theme.color.background,
     },
@@ -27,12 +27,11 @@ export const authStyles = (theme: Theme) => {
     container: {
       width: '100%',
     },
-    button: {
-      width: 200,
-      marginTop: 25,
+    text: {
+      color: theme.color.font,
     },
-    errorMessage: {
-      color: '#dc5878',
+    button: {
+      marginTop: 20,
     },
   });
 };

@@ -10,7 +10,6 @@ type SettingsStylesType = {
   discription: ViewStyle;
   discriptionText: TextStyle;
   themeBar: ViewStyle;
-  button: ViewStyle;
   center: ViewStyle;
 };
 
@@ -57,12 +56,6 @@ export const SettingsStyles = (theme: Theme) => {
       justifyContent: 'space-between',
       alignItems: 'center',
       backgroundColor: '#2997dc',
-    },
-    button: {
-      width: '25%',
-      position: 'absolute',
-      bottom: 20,
-      backgroundColor: '#dc5878',
     },
     center: {
       justifyContent: 'center',

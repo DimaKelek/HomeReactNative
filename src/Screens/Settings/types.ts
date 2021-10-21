@@ -1,5 +1,7 @@
+import {UserType} from '../../Redux/Auth/types';
+
 export type SettingsViewType = {
-  logoutHandler: () => void;
   changeAvatarHandler: () => void;
   avatar: string | null;
+  userData: UserType | null;
 };

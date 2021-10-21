@@ -1,13 +1,10 @@
-import {AC} from './enum';
+import {AuthErrorType, UserType} from './types';
+import {AuthReducerActions} from '../enum';
 
-export const signInSucceeded = (user: any) => {
-  return {type: AC.SignInSucceeded, user} as const;
+export const setUserData = (userData: UserType | null) => {
+  return {type: AuthReducerActions.SetUserData, userData} as const;
 };
 
-export const logOutSucceeded = () => {
-  return {type: AC.LogOutSucceeded} as const;
-};
-
-export const failed = (error: string) => {
-  return {type: AC.Failed, error} as const;
+export const setError = (error: AuthErrorType | null) => {
+  return {type: AuthReducerActions.Error, error} as const;
 };

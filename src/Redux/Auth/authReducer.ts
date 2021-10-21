@@ -1,10 +1,9 @@
-import {AC} from './enum';
-import {AuthActionsType, AuthStateType} from './types';
+import {AuthActionsType, AuthErrorType, AuthStateType, UserType} from './types';
+import {AuthReducerActions} from '../enum';
 
 export const initialState = {
-  isLoggedIn: false,
-  userData: null,
-  error: '',
+  userData: null as UserType | null,
+  error: null as AuthErrorType | null,
 };
 
 export const authReducer = (
@@ -12,14 +11,11 @@ export const authReducer = (
   action: AuthActionsType,
 ): AuthStateType => {
   switch (action.type) {
-    case AC.SignInSucceeded: {
-      return {...state, userData: action.user, isLoggedIn: true};
+    case AuthReducerActions.SetUserData: {
+      return {...state, userData: action.userData};
     }
-    case AC.LogOutSucceeded: {
-      return {...state, userData: null, isLoggedIn: false};
-    }
-    case AC.Failed: {
-      return {...state, error: action.error};
+    case AuthReducerActions.Error: {
+      return {...state, error: {...action.error}};
     }
     default:
       return state;

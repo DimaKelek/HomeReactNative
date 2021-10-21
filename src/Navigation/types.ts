@@ -14,6 +14,7 @@ export type StackNavigationType = {
 
 export type AuthStackType = {
   Authorization: any;
+  Register: any;
 };
 
 export type HomeProps = NativeStackScreenProps<
@@ -27,6 +28,12 @@ export type DetailsProps = NativeStackScreenProps<
 export type SettingsProps = BottomTabScreenProps<
   TabNavigationType,
   Screens.Settings
+>;
+
+export type AuthProps = BottomTabScreenProps<AuthStackType, Screens.Auth>;
+export type RegistrationProps = BottomTabScreenProps<
+  AuthStackType,
+  Screens.Register
 >;
 
 export type MainProps = BottomTabScreenProps<TabNavigationType, Screens.Main>;

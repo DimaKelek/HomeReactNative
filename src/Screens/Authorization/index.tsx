@@ -1,11 +1,14 @@
 import React, {FC} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {AuthView} from './AuthView';
 import {FormErrorsType, SubmitType} from './types';
-import {signInUser} from '../../Redux/Sagas/actions';
+import {signInUser} from '../../Redux/Sagas/sagaActions';
+import {selectError} from '../../Redux/Auth/selectors';
+import {AuthProps} from '../../Navigation/types';
 
-export const AuthScreen: FC<any> = () => {
+export const AuthScreen: FC<AuthProps> = ({navigation}) => {
   const dispatch = useDispatch();
+  const error = useSelector(selectError);
 
   const validate = (values: any) => {
     const errors: FormErrorsType = {};
@@ -15,10 +18,25 @@ export const AuthScreen: FC<any> = () => {
     return errors;
   };
 
-  const signInHandler = (submit: SubmitType) => {
+  const signInHandler = (
+    submit: SubmitType,
+    email: string,
+    password: string,
+  ) => {
     submit();
-    dispatch(signInUser());
+    dispatch(signInUser(email, password));
   };
 
-  return <AuthView signInHandler={signInHandler} validate={validate} />;
+  const signUpHandler = () => {
+    navigation.navigate('Register');
+  };
+
+  return (
+    <AuthView
+      signInHandler={signInHandler}
+      validate={validate}
+      error={error}
+      signUpHandler={signUpHandler}
+    />
+  );
 };

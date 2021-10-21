@@ -9,15 +9,12 @@ import {
 } from 'react-native-image-picker';
 import {changeAvatar} from '../../Redux/Settings/actions';
 import {selectAvatar} from '../../Redux/Settings/selectors';
-import {logOutUser} from '../../Redux/Sagas/actions';
+import {selectUserData} from '../../Redux/Auth/selectors';
 
 export const SettingsScreen: React.FC<SettingsProps> = () => {
   const avatar = useSelector(selectAvatar);
   const dispatch = useDispatch();
-
-  const logoutHandler = () => {
-    dispatch(logOutUser());
-  };
+  const userData = useSelector(selectUserData);
 
   const changeAvatarHandler = () => {
     const options: ImageLibraryOptions = {
@@ -41,9 +38,9 @@ export const SettingsScreen: React.FC<SettingsProps> = () => {
 
   return (
     <SettingsView
-      logoutHandler={logoutHandler}
       changeAvatarHandler={changeAvatarHandler}
       avatar={avatar}
+      userData={userData}
     />
   );
 };

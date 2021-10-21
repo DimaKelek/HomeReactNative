@@ -10,8 +10,8 @@ type InputStylesType = {
 export const inputStyles = (theme: Theme) => {
   return StyleSheet.create<InputStylesType>({
     inputContainer: {
-      height: 60,
-      marginBottom: 10,
+      height: 50,
+      marginBottom: 5,
     },
     input: {
       width: '100%',

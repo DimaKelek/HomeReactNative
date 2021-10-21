@@ -7,14 +7,14 @@ import {Formik} from 'formik';
 import {AuthViewPropsType} from './types';
 import {MyInput} from './Input/MyInput';
 
-export const AuthView: FC<AuthViewPropsType> = ({validate, signInHandler}) => {
+export const AuthView: FC<AuthViewPropsType> = props => {
+  const {validate, signInHandler, error, signUpHandler} = props;
   const Styles = useComponentStyles(authStyles);
   const {t} = useTranslation();
-
   return (
     <Formik
-      initialValues={{email: 'kelek123@lolkek.com', password: '123qwer'}}
-      onSubmit={values => console.log(values)}
+      initialValues={{email: 'kelek123@lolkek.co', password: '1234qwer'}}
+      onSubmit={values => {}}
       validate={validate}>
       {({handleChange, handleSubmit, errors, touched, values}) => {
         return (
@@ -38,11 +38,17 @@ export const AuthView: FC<AuthViewPropsType> = ({validate, signInHandler}) => {
                 errors={errors}
               />
             </View>
+            {/*<Text style={Styles.errorMessage}>{error?.message}</Text>*/}
             <View style={Styles.button}>
               <Button
-                onPress={() => signInHandler(handleSubmit)}
-                title={t('Login')}
+                onPress={() =>
+                  signInHandler(handleSubmit, values.email, values.password)
+                }
+                title={t('Sign In')}
               />
+            </View>
+            <View style={Styles.button}>
+              <Button onPress={signUpHandler} title={t('Sign Up')} />
             </View>
           </View>
         );
