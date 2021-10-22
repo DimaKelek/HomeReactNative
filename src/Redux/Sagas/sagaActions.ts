@@ -1,18 +1,23 @@
 import {SagaActions} from '../enum';
-import {SignUpFormType} from '../../Screens/Registration/RegistrationView';
+import {
+  GetUserDataSagaAction,
+  LogOutUserSagaAction,
+  SignInUserSagaAction,
+  SignUpFirebaseSagaAction,
+} from './types';
 
-export const signInUser = (email: string, password: string) => {
+export const signInUser: SignInUserSagaAction = (email, password) => {
   return {type: SagaActions.SignIn, email, password};
 };
 
-export const logOutUser = () => {
+export const logOutUser: LogOutUserSagaAction = () => {
   return {type: SagaActions.LogOut};
 };
 
-export const getUserData = (userID: string) => {
+export const getUserData: GetUserDataSagaAction = userID => {
   return {type: SagaActions.GetUserData, userID};
 };
 
-export const signUpFirebase = (values: SignUpFormType) => {
+export const signUpUser: SignUpFirebaseSagaAction = values => {
   return {type: SagaActions.SignUp, values};
 };

@@ -13,7 +13,7 @@ export type StackNavigationType = {
 };
 
 export type AuthStackType = {
-  Authorization: any;
+  Authentication: any;
   Register: any;
 };
 

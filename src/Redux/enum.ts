@@ -8,4 +8,5 @@ export enum SagaActions {
 export enum AuthReducerActions {
   SetUserData = 'SET-USER-DATA',
   Error = 'SOME-ERROR',
+  Status = 'SET-STATUS',
 }

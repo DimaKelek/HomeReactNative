@@ -7,6 +7,10 @@ type RegistrationStylesType = {
   title: TextStyle;
   container: ViewStyle;
   button: ViewStyle;
+  input: ViewStyle;
+  inputError: ViewStyle;
+  inputNormal: ViewStyle;
+  placeholder: TextStyle;
 };
 
 export const registrationStyles = (theme: Theme) => {
@@ -32,6 +36,25 @@ export const registrationStyles = (theme: Theme) => {
     },
     button: {
       marginTop: 20,
+    },
+    input: {
+      width: '100%',
+      height: 40,
+      paddingHorizontal: 15,
+      backgroundColor: theme.color.input,
+      color: theme.color.font,
+      borderStyle: 'solid',
+      borderWidth: 2,
+      borderRadius: 5,
+    },
+    inputError: {
+      borderColor: '#dc5878',
+    },
+    inputNormal: {
+      borderColor: '#78adea',
+    },
+    placeholder: {
+      color: theme.color.placeholderColor,
     },
   });
 };

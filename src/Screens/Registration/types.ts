@@ -1,5 +1,22 @@
-import {FormErrorsType} from '../Authorization/types';
+import {AuthErrorType} from '../../Redux/Auth/types';
 
 export type RegistrationViewPropsType = {
-  validate: (values: any) => FormErrorsType;
+  validate: (values: SignUpFormType) => RegisterFormErrorsType;
+  error: AuthErrorType | null;
+};
+
+export type SignUpFormType = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
+
+export type RegisterFormErrorsType = {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  password?: string;
+  confirmPassword?: string;
 };

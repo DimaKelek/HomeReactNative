@@ -4,13 +4,23 @@ import React from 'react';
 import {Screens} from '../enum';
 import {AuthScreen} from '../../Screens/Authorization';
 import {RegistrationScreen} from '../../Screens/Registration';
+import {useTranslation} from 'react-i18next';
 
 export const AuthStack = () => {
   const Stack = createNativeStackNavigator<AuthStackType>();
+  const {t} = useTranslation();
   return (
     <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
-      <Stack.Screen name={Screens.Auth} component={AuthScreen} />
-      <Stack.Screen name={Screens.Register} component={RegistrationScreen} />
+      <Stack.Screen
+        name={Screens.Auth}
+        component={AuthScreen}
+        options={{title: t(Screens.Auth)}}
+      />
+      <Stack.Screen
+        name={Screens.Register}
+        component={RegistrationScreen}
+        options={{title: t(Screens.Register)}}
+      />
     </Stack.Navigator>
   );
 };

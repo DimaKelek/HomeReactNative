@@ -2,9 +2,10 @@ import {ColorTheme, Theme} from './types';
 import {Themes} from './enum';
 
 const DARK_COLOR_THEME: ColorTheme = {
-  background: '#282727',
+  background: '#0e0e0e',
   font: '#ffffff',
-  input: '#262626',
+  input: '#0e0e0e',
+  placeholderColor: '#282727',
 };
 
 export const DARK_THEME: Theme = {

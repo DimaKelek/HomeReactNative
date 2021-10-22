@@ -1,15 +1,19 @@
 import {Screens} from '../enum';
 import {MainStack} from '../Stacks/MainStack';
 import {Image} from 'react-native';
-import {styles} from '../styles';
+import {navigationsStyles} from '../styles';
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {TabNavigationType} from '../types';
 import {useTranslation} from 'react-i18next';
 import {SettingsScreen} from '../../Screens/Settings';
+import {useComponentStyles} from '../../Common/Hooks/Hooks';
+import {HomeSvg} from '../../Common/Icons/Svg/HomeSvg';
+import {SettingsSvg} from '../../Common/Icons/Svg/SettingsSvg';
 
 export const MainTab = () => {
   const Tab = createBottomTabNavigator<TabNavigationType>();
+  const Styles = useComponentStyles(navigationsStyles);
   const {t} = useTranslation();
   return (
     <Tab.Navigator>
@@ -17,11 +21,9 @@ export const MainTab = () => {
         name={Screens.Main}
         component={MainStack}
         options={{
-          tabBarIcon: () => (
-            <Image source={require('../../Common/Icons/home.png')} />
-          ),
-          tabBarLabelStyle: styles.label,
-          tabBarStyle: styles.tabBar,
+          tabBarIcon: () => <HomeSvg />,
+          tabBarLabelStyle: Styles.label,
+          tabBarStyle: Styles.tabBar,
           headerShown: false,
           title: t(Screens.Home),
         }}
@@ -30,11 +32,9 @@ export const MainTab = () => {
         name={Screens.Settings}
         component={SettingsScreen}
         options={{
-          tabBarIcon: () => (
-            <Image source={require('../../Common/Icons/settings.png')} />
-          ),
-          tabBarLabelStyle: styles.label,
-          tabBarStyle: styles.tabBar,
+          tabBarIcon: () => <SettingsSvg />,
+          tabBarLabelStyle: Styles.label,
+          tabBarStyle: Styles.tabBar,
           headerShown: false,
           title: t(Screens.Settings),
         }}

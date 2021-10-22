@@ -4,100 +4,110 @@ import {registrationStyles} from './styles';
 import {useTranslation} from 'react-i18next';
 import {Button, Text, View} from 'react-native';
 import {RegistrationViewPropsType} from './types';
-import {MyInput} from '../Authorization/Input/MyInput';
+import {MyInput} from '../../Common/Components/Input/MyInput';
 import {Formik} from 'formik';
 import {useDispatch} from 'react-redux';
-import {signUpFirebase} from '../../Redux/Sagas/sagaActions';
-
-export type SignUpFormType = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-};
+import {signUpUser} from '../../Redux/Sagas/sagaActions';
 
 export const RegistrationView: FC<RegistrationViewPropsType> = props => {
   const {validate} = props;
   const Styles = useComponentStyles(registrationStyles);
   const {t} = useTranslation();
   const dispatch = useDispatch();
-
-  const disabledButton = (values: SignUpFormType) => {
-    if (values.password !== values.confirmPassword) {
-      return true;
-    } else {
-      return Object.values(values).some(v => v === '');
-    }
+  let initialValues = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   };
-
   return (
     <View style={Styles.registration}>
       <Formik
-        initialValues={{
-          firstName: 'Name',
-          lastName: 'Last Name',
-          email: '',
-          password: '1234qwer',
-          confirmPassword: '1234qwer',
-        }}
+        initialValues={initialValues}
         onSubmit={values => {
-          dispatch(signUpFirebase(values));
-          console.log(values);
+          dispatch(signUpUser(values));
         }}
         validate={validate}>
         {({handleChange, handleSubmit, errors, touched, values}) => {
+          console.log(errors);
           return (
             <View style={Styles.registration}>
-              <Text style={Styles.title}>Sign Up</Text>
+              <Text style={Styles.title}>{t('Sign Up')}</Text>
               <View style={Styles.container}>
                 <MyInput
                   value={values.firstName}
                   placeholder={t('First name')}
-                  placeholderTextColor={Styles.title.color}
+                  placeholderTextColor={Styles.placeholder.color}
                   onChangeText={handleChange('firstName')}
-                  errors={errors}
-                  touched={touched}
+                  error={errors.firstName}
+                  touched={touched.firstName}
+                  style={[
+                    Styles.input,
+                    errors.firstName && touched.firstName
+                      ? Styles.inputError
+                      : Styles.inputNormal,
+                  ]}
                 />
                 <MyInput
                   value={values.lastName}
                   placeholder={t('Last name')}
-                  placeholderTextColor={Styles.title.color}
+                  placeholderTextColor={Styles.placeholder.color}
                   onChangeText={handleChange('lastName')}
-                  touched={touched}
-                  errors={errors}
+                  touched={touched.lastName}
+                  error={errors.lastName}
+                  style={[
+                    Styles.input,
+                    errors.lastName && touched.lastName
+                      ? Styles.inputError
+                      : Styles.inputNormal,
+                  ]}
                 />
                 <MyInput
                   value={values.email}
                   placeholder={t('Email')}
-                  placeholderTextColor={Styles.title.color}
+                  placeholderTextColor={Styles.placeholder.color}
                   onChangeText={handleChange('email')}
-                  touched={touched}
-                  errors={errors}
+                  touched={touched.email}
+                  error={errors.email}
+                  style={[
+                    Styles.input,
+                    errors.email && touched.email
+                      ? Styles.inputError
+                      : Styles.inputNormal,
+                  ]}
                 />
                 <MyInput
                   value={values.password}
                   placeholder={t('Password')}
-                  placeholderTextColor={Styles.title.color}
+                  placeholderTextColor={Styles.placeholder.color}
                   onChangeText={handleChange('password')}
-                  touched={touched}
-                  errors={errors}
+                  touched={touched.password}
+                  error={errors.password}
+                  style={[
+                    Styles.input,
+                    errors.password && touched.password
+                      ? Styles.inputError
+                      : Styles.inputNormal,
+                  ]}
                 />
                 <MyInput
                   value={values.confirmPassword}
                   placeholder={t('Confirm password')}
-                  placeholderTextColor={Styles.title.color}
+                  placeholderTextColor={Styles.placeholder.color}
                   onChangeText={handleChange('confirmPassword')}
-                  touched={touched}
-                  errors={errors}
+                  touched={touched.confirmPassword}
+                  error={errors.confirmPassword}
+                  style={[
+                    Styles.input,
+                    errors.confirmPassword && touched.confirmPassword
+                      ? Styles.inputError
+                      : Styles.inputNormal,
+                  ]}
                 />
                 <View />
                 <View style={Styles.button}>
-                  <Button
-                    title={'Sign Up'}
-                    disabled={disabledButton(values)}
-                    onPress={handleSubmit}
-                  />
+                  <Button title={t('Sign Up')} onPress={handleSubmit} />
                 </View>
               </View>
             </View>
