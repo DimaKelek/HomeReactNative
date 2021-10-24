@@ -14,7 +14,8 @@
     "plugin:import/warnings",
     "plugin:react/recommended",
     "@react-native-community",
-    "plugin:react-redux/recommended"
+    "plugin:react-redux/recommended",
+    "plugin:import/typescript"
   ],
   "rules": {
     "jsx-quotes": [1, "prefer-double"],
@@ -51,6 +52,23 @@
           ".ts",
           ".tsx"
         ]
+      },
+      "alias": {
+        "map": [
+          ["components", "./src/Common/Components"],
+          ["hooks", "./src/Common/Hooks"],
+          ["themes", "./src/Common/Themes"],
+          ["nav", "./src/S4-Navigation"],
+          ["redux", "./src/S3-Redux"],
+          ["sagas", "./src/S3-Redux/Sagas"],
+          ["homeScreen", "./src/S2-Screens/S3-Home"],
+          ["settingsScreen", "./src/S2-Screens/S4-Settings"],
+          ["authScreen", "./src/S2-Screens/S1-Authorization"],
+          ["registerScreen", "./src/S2-Screens/S2-Registration"],
+          ["detailsScreen", "./src/S2-Screens/S5-Details"],
+          ["utils", "./src/Common/Utils"]
+        ],
+        "extensions": [".ts", ".js", ".jsx", ".tsx", ".json"]
       }
     },
     "import/ignore": ["react-native", "@react-navigation"],

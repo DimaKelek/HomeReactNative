@@ -7,6 +7,9 @@ buildscript {
         compileSdkVersion = 30
         targetSdkVersion = 30
         ndkVersion = "21.4.7075529"
+        supportLibVersion = "0.29.3"
+        playServicesVersion = "17.0.0"
+        androidMapsUtilsVersion = "0.5+"
     }
     repositories {
         google()
@@ -15,6 +18,8 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:4.2.2")
         classpath("com.google.gms:google-services:4.3.10")
+        classpath "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.0"
+        //classpath "com.google:plugin:0.6.1"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

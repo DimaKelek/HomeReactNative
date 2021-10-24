@@ -1,9 +1,10 @@
 import React, {FC, memo} from 'react';
 import {Text, TextInput, View} from 'react-native';
-import {useComponentStyles} from '../../Hooks/Hooks';
-import {inputStyles} from './styles';
+import {useComponentStyles} from 'hooks/Hooks';
+import {MyInputPropsType} from './MyInput.types';
+import {inputStyles} from './MyInput.styles';
 
-export const MyInput: FC<any> = memo(props => {
+export const MyInput: FC<MyInputPropsType> = memo(props => {
   const {style, touched, error, ...restProps} = props;
   const Styles = useComponentStyles(inputStyles);
   return (

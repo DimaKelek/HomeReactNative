@@ -37,8 +37,23 @@
 
     /* Module Resolution Options */
     "moduleResolution": "node",               /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
-    // "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
-    // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    "baseUrl": ".",                          /* Base directory to resolve non-absolute module names. */
+    "paths": {
+      "*": ["src/*"],
+      "tests": ["tests/*"],
+      "components/*": ["src/Common/Components/*"],
+      "hooks/*": ["src/Common/Hooks/*"],
+      "themes/*": ["src/Common/Themes/*"],
+      "nav/*": ["src/S4-Navigation/*"],
+      "redux/*": ["src/S3-Redux/*"],
+      "sagas/*": ["src/S3-Redux/Sagas/*"],
+      "homeScreen/*": ["src/S2-Screens/S3-Home/*"],
+      "settingsScreen/*": ["src/S2-Screens/S4-Settings/*"],
+      "authScreen/*": ["src/S2-Screens/S1-Authorization/*"],
+      "registerScreen/*": ["src/S2-Screens/S2-Registration/*"],
+      "detailsScreen/*": ["src/S2-Screens/S5-Details/*"],
+      "utils/*": ["src/Common/Utils/*"],
+    },                                        /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* List of folders to include type definitions from. */
     // "types": [],                           /* Type declaration files to be included in compilation. */
