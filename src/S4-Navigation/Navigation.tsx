@@ -4,22 +4,14 @@ import {useDispatch, useSelector} from 'react-redux';
 import {AuthStack} from './Stacks/AuthStack';
 import {MainTab} from './Tabs/MainTab';
 import {selectUserData} from 'redux/Auth/selectors';
-import auth from '@react-native-firebase/auth';
-import {getUserData} from 'sagas/sagaActions';
+import {checkAuth} from 'sagas/sagaActions';
 
 export const AppNavigation = () => {
   const userData = useSelector(selectUserData);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsub = auth().onAuthStateChanged(user => {
-      if (user) {
-        dispatch(getUserData(user.uid));
-      } else {
-        console.log('User not logged in');
-      }
-    });
-    return unsub;
+    dispatch(checkAuth());
   }, [dispatch]);
 
   return (

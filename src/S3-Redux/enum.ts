@@ -2,6 +2,7 @@ export enum SagaActions {
   SignIn = 'SAGA/SIGN-IN',
   SignUp = 'SAGA/SIGN-UP',
   LogOut = 'SAGA/LOG-OUT',
+  CheckAuth = 'SAGA/CHECK-AUTH',
   GetUserData = 'SAGA/GET-USER-DATA',
 }
 

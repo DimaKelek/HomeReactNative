@@ -23,3 +23,7 @@ export type SignUpFirebaseSagaAction = (values: SignUpFormType) => {
   type: SagaActions.SignUp;
   values: SignUpFormType;
 };
+
+export type CheckAuthType = () => {
+  type: SagaActions.CheckAuth;
+};

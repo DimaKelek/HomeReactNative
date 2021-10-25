@@ -1,5 +1,6 @@
 import {SagaActions} from '../enum';
 import {
+  CheckAuthType,
   GetUserDataSagaAction,
   LogOutUserSagaAction,
   SignInUserSagaAction,
@@ -20,4 +21,8 @@ export const getUserData: GetUserDataSagaAction = userID => {
 
 export const signUpUser: SignUpFirebaseSagaAction = values => {
   return {type: SagaActions.SignUp, values};
+};
+
+export const checkAuth: CheckAuthType = () => {
+  return {type: SagaActions.CheckAuth};
 };
