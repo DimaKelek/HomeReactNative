@@ -25,26 +25,18 @@ export const taskReducer = (
   action: TaskActionsType,
 ): TaskStateType => {
   switch (action.type) {
+    case TaskReducerActions.Status: {
+      return {
+        ...state,
+        tasks: {
+          ...state.tasks,
+          [action.todolistID]: [...state.tasks[action.todolistID]].map(t =>
+            t.id === action.taskID ? {...t, isDone: action.value} : t,
+          ),
+        },
+      };
+    }
     default:
       return state;
   }
-};
-
-export type ChangeTaskStatusType = (data: {
-  taskID: string;
-  todolistID: string;
-  value: boolean;
-}) => {
-  type: TaskReducerActions.Status;
-  taskID: string;
-  todolistID: string;
-  value: boolean;
-};
-
-export const changeTaskStatus: ChangeTaskStatusType = ({
-  taskID,
-  todolistID,
-  value,
-}) => {
-  return {type: TaskReducerActions.Status, taskID, todolistID, value};
 };
