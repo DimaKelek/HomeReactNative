@@ -10,3 +10,12 @@ export enum AuthReducerActions {
   Error = 'SOME-ERROR',
   Status = 'SET-STATUS',
 }
+
+export enum TodoReducerActions {
+  Remove = 'REMOVE-TODO',
+  CheckTodo = 'SELECT-TODO',
+}
+
+export enum TaskReducerActions {
+  Status = 'CHANGE-TASK-STATUS',
+}

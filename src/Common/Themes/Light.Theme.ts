@@ -6,6 +6,7 @@ const LIGHT_COLOR_THEME: ColorTheme = {
   font: '#000000',
   input: '#ffffff',
   placeholderColor: '#494949',
+  todoBackground: '#e8ecec',
 };
 
 export const LIGHT_THEME: Theme = {

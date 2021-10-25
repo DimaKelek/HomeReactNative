@@ -5,6 +5,7 @@ export type ColorTheme = {
   font: string;
   input: string;
   placeholderColor: string;
+  todoBackground: string;
 };
 
 export type Theme = {

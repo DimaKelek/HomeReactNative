@@ -1,18 +1,22 @@
-import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
+import {StyleSheet, ViewStyle} from 'react-native';
 import {Theme} from 'themes/types';
 
 type HomeStylesType = {
   home: ViewStyle;
   slider: ViewStyle;
   mapButton: ViewStyle;
+  todolists: ViewStyle;
+  flatContainer: ViewStyle;
 };
 
-export const HomeStyles = (theme: Theme) => {
+export const homeStyles = (theme: Theme) => {
   return StyleSheet.create<HomeStylesType>({
     home: {
       flex: 1,
-      justifyContent: 'center',
+      paddingTop: 60,
+      paddingHorizontal: 15,
       alignItems: 'center',
+      justifyContent: 'center',
       backgroundColor: theme.color.background,
     },
     slider: {
@@ -22,6 +26,12 @@ export const HomeStyles = (theme: Theme) => {
       position: 'absolute',
       right: 10,
       top: 10,
+    },
+    todolists: {
+      width: '100%',
+    },
+    flatContainer: {
+      width: '100%',
     },
   });
 };
