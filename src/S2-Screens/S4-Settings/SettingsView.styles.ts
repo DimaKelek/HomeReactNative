@@ -11,6 +11,7 @@ type SettingsStylesType = {
   discriptionText: TextStyle;
   themeBar: ViewStyle;
   center: ViewStyle;
+  exit: ViewStyle;
 };
 
 export const SettingsStyles = (theme: Theme) => {
@@ -60,6 +61,11 @@ export const SettingsStyles = (theme: Theme) => {
     center: {
       justifyContent: 'center',
       alignItems: 'center',
+    },
+    exit: {
+      position: 'absolute',
+      width: 150,
+      bottom: 20,
     },
   });
 };

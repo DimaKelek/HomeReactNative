@@ -4,7 +4,6 @@ import {Theme} from 'themes/types';
 type DetailsStylesType = {
   details: ViewStyle;
   text: TextStyle;
-  map: ViewStyle;
 };
 
 export const detailsStyles = (theme: Theme) => {
@@ -12,9 +11,6 @@ export const detailsStyles = (theme: Theme) => {
     details: {},
     text: {
       color: theme.color.font,
-    },
-    map: {
-      height: '100%',
     },
   });
 };

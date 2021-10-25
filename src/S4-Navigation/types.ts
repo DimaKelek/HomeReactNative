@@ -10,6 +10,7 @@ export type TabNavigationType = {
 export type StackNavigationType = {
   Home: any;
   Details: any;
+  Map: any;
 };
 
 export type AuthStackType = {
@@ -21,6 +22,7 @@ export type HomeProps = NativeStackScreenProps<
   StackNavigationType,
   Screens.Home
 >;
+export type MapProps = NativeStackScreenProps<StackNavigationType, Screens.Map>;
 export type DetailsProps = NativeStackScreenProps<
   StackNavigationType,
   Screens.Details

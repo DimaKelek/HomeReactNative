@@ -2,9 +2,9 @@ import React, {FC, memo} from 'react';
 import {Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {useComponentStyles} from 'hooks/Hooks';
-import {authStyles} from './styles';
+import {authStyles} from './AuthView.styles';
 import {Formik} from 'formik';
-import {AuthViewPropsType} from './types';
+import {AuthViewPropsType} from './Auth.types';
 import {MyInput} from 'components/Input/MyInput';
 import {MyButton} from 'components/MyButton/MyButton';
 

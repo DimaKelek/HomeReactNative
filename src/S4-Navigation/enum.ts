@@ -1,6 +1,7 @@
 export enum Screens {
   Main = 'Main',
   Home = 'Home',
+  Map = 'Map',
   Settings = 'Settings',
   Details = 'Details',
   Auth = 'Authentication',

@@ -7,6 +7,7 @@ import {HomeScreen} from 'homeScreen/index';
 import {useComponentStyles} from 'hooks/Hooks';
 import {stacksStyles} from './styles';
 import {DetailsScreen} from 'detailsScreen/index';
+import {MapScreen} from 'S2-Screens/S6-Map';
 
 export const MainStack = () => {
   const Stack = createNativeStackNavigator<StackNavigationType>();
@@ -28,6 +29,15 @@ export const MainStack = () => {
         component={DetailsScreen}
         options={{
           title: t(Screens.Details),
+          headerStyle: Styles.stackHeader,
+          headerTitleStyle: Styles.stackHeaderColor,
+        }}
+      />
+      <Stack.Screen
+        name={Screens.Map}
+        component={MapScreen}
+        options={{
+          title: t(Screens.Map),
           headerStyle: Styles.stackHeader,
           headerTitleStyle: Styles.stackHeaderColor,
         }}

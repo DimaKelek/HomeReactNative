@@ -7,9 +7,8 @@ export const navigationsStyles = (theme: Theme) => {
       fontSize: 18,
     },
     tabBar: {
-      padding: 10,
-      height: 60,
-      // borderRadius: 10,
+      paddingBottom: 10,
+      height: 80,
       backgroundColor: theme.color.background,
     },
   });

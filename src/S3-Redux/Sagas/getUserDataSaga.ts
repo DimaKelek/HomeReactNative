@@ -1,4 +1,4 @@
-import {GetUserDataSagaAction} from './types';
+import {GetUserDataSagaAction} from './Sagas.types';
 import {UserType} from '../Auth/types';
 import {call, put} from 'redux-saga/effects';
 import {getFirebaseUserData} from 'S1-Firebase/firebase';

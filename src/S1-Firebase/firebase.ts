@@ -1,6 +1,6 @@
 import database from '@react-native-firebase/database';
 import auth from '@react-native-firebase/auth';
-import {SignUpFormType} from 'registerScreen/types';
+import {SignUpFormType} from 'registerScreen/Register.types';
 
 const baseRef = database().ref('/users');
 

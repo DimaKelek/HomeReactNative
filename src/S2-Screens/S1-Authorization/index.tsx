@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {AuthView} from './AuthView';
-import {FormErrorsType, SignInFormType} from './types';
+import {FormErrorsType, SignInFormType} from './Auth.types';
 import {signInUser} from 'sagas/sagaActions';
 import {selectError} from 'redux/Auth/selectors';
 import {AuthProps} from 'nav/types';

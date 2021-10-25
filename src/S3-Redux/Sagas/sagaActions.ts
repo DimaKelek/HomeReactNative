@@ -4,7 +4,7 @@ import {
   LogOutUserSagaAction,
   SignInUserSagaAction,
   SignUpFirebaseSagaAction,
-} from './types';
+} from './Sagas.types';
 
 export const signInUser: SignInUserSagaAction = (email, password) => {
   return {type: SagaActions.SignIn, email, password};

@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {RegistrationProps} from 'nav/types';
 import {RegistrationView} from './RegistrationView';
-import {RegisterFormErrorsType, SignUpFormType} from './types';
+import {RegisterFormErrorsType, SignUpFormType} from './Register.types';
 import {useSelector} from 'react-redux';
 import {selectError} from 'redux/Auth/selectors';
 

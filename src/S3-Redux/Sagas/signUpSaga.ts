@@ -1,4 +1,4 @@
-import {SignUpFirebaseSagaAction} from './types';
+import {SignUpFirebaseSagaAction} from './Sagas.types';
 import {call, put} from 'redux-saga/effects';
 import {signUpFirebase} from 'S1-Firebase/firebase';
 import {setError} from '../Auth/actions';

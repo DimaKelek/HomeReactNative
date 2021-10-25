@@ -1,5 +1,5 @@
 import {SagaActions} from '../enum';
-import {SignUpFormType} from 'registerScreen/types';
+import {SignUpFormType} from 'registerScreen/Register.types';
 
 export type SignInUserSagaAction = (
   email: string,

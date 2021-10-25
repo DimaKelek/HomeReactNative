@@ -3,8 +3,8 @@ import {Theme} from 'themes/types';
 
 type HomeStylesType = {
   home: ViewStyle;
-  exit: ViewStyle;
-  text: TextStyle;
+  slider: ViewStyle;
+  mapButton: ViewStyle;
 };
 
 export const HomeStyles = (theme: Theme) => {
@@ -15,13 +15,13 @@ export const HomeStyles = (theme: Theme) => {
       alignItems: 'center',
       backgroundColor: theme.color.background,
     },
-    text: {
-      color: theme.color.font,
-      fontSize: 24,
-      marginBottom: 25,
+    slider: {
+      width: 350,
     },
-    exit: {
-      marginVertical: 30,
+    mapButton: {
+      position: 'absolute',
+      right: 10,
+      top: 10,
     },
   });
 };

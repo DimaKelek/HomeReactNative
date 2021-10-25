@@ -1,14 +1,15 @@
 import React, {FC} from 'react';
 import {Text, TouchableHighlight, View} from 'react-native';
 import {ThemeBar} from 'themes/ThemeBar/ThemeBar';
-import {SettingsStyles} from './styles';
+import {SettingsStyles} from './SettingsView.styles';
 import {useComponentStyles} from 'hooks/Hooks';
 import {useTranslation} from 'react-i18next';
-import {SettingsViewType} from './types';
+import {SettingsViewType} from './Settings.types';
 import {DefaultAvatar} from 'Common/Icons/Svg/DefaultAvatar';
+import {MyButton} from 'components/MyButton/MyButton';
 
 export const SettingsView: FC<SettingsViewType> = props => {
-  const {changeAvatarHandler, avatar, userData} = props;
+  const {changeAvatarHandler, avatar, userData, exitHandler} = props;
   const Styles = useComponentStyles(SettingsStyles);
   const {t} = useTranslation();
 
@@ -37,6 +38,7 @@ export const SettingsView: FC<SettingsViewType> = props => {
         </View>
       </View>
       <ThemeBar />
+      <MyButton title={t('Exit')} onPress={exitHandler} style={Styles.exit} />
     </View>
   );
 };

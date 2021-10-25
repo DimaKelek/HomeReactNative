@@ -10,11 +10,16 @@ import {
 import {changeAvatar} from 'redux/Settings/actions';
 import {selectAvatar} from 'redux/Settings/selectors';
 import {selectUserData} from 'redux/Auth/selectors';
+import {logOutUser} from 'sagas/sagaActions';
 
 export const SettingsScreen: React.FC<SettingsProps> = () => {
   const avatar = useSelector(selectAvatar);
   const dispatch = useDispatch();
   const userData = useSelector(selectUserData);
+
+  const exitHandler = () => {
+    dispatch(logOutUser());
+  };
 
   const changeAvatarHandler = () => {
     const options: ImageLibraryOptions = {
@@ -41,6 +46,7 @@ export const SettingsScreen: React.FC<SettingsProps> = () => {
       changeAvatarHandler={changeAvatarHandler}
       avatar={avatar}
       userData={userData}
+      exitHandler={exitHandler}
     />
   );
 };

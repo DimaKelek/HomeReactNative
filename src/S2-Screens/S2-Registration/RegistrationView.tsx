@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
 import {useComponentStyles} from 'hooks/Hooks';
-import {registrationStyles} from './styles';
+import {registrationStyles} from './RegistrationView.styles';
 import {useTranslation} from 'react-i18next';
 import {Button, Text, View} from 'react-native';
-import {RegistrationViewPropsType} from './types';
+import {RegistrationViewPropsType} from './Register.types';
 import {MyInput} from 'components/Input/MyInput';
 import {Formik} from 'formik';
 import {useDispatch} from 'react-redux';
