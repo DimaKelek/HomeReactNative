@@ -1,10 +1,10 @@
 import React from 'react';
 import {ThemeProvider} from './Common/Themes/ThemeContext';
 import {LIGHT_THEME} from './Common/Themes/Light.Theme';
-import {AppNavigation} from './S4-Navigation/Navigation';
+import {AppNavigation} from './Navigation/Navigation';
 import './Common/Languages/i18next';
 import {Provider} from 'react-redux';
-import {store} from './S3-Redux/store';
+import {store} from './Redux/store';
 
 export const App = () => {
   return (

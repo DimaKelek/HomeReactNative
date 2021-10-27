@@ -37,21 +37,21 @@
 
     /* Module Resolution Options */
     "moduleResolution": "node",               /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
-    "baseUrl": ".",                          /* Base directory to resolve non-absolute module names. */
+    "baseUrl": ".",                           /* Base directory to resolve non-absolute module names. */
     "paths": {
       "*": ["src/*"],
       "tests": ["tests/*"],
       "components/*": ["src/Common/Components/*"],
       "hooks/*": ["src/Common/Hooks/*"],
       "themes/*": ["src/Common/Themes/*"],
-      "nav/*": ["src/S4-Navigation/*"],
-      "redux/*": ["src/S3-Redux/*"],
-      "sagas/*": ["src/S3-Redux/Sagas/*"],
-      "homeScreen/*": ["src/S2-Screens/S3-Home/*"],
-      "settingsScreen/*": ["src/S2-Screens/S4-Settings/*"],
-      "authScreen/*": ["src/S2-Screens/S1-Authorization/*"],
-      "registerScreen/*": ["src/S2-Screens/S2-Registration/*"],
-      "detailsScreen/*": ["src/S2-Screens/S5-Details/*"],
+      "nav/*": ["src/Navigation/*"],
+      "redux/*": ["src/Redux/*"],
+      "sagas/*": ["src/Redux/Sagas/*"],
+      "homeScreen/*": ["src/Screens/Home/*"],
+      "settingsScreen/*": ["src/Screens/Settings/*"],
+      "authScreen/*": ["src/Screens/Authorization/*"],
+      "registerScreen/*": ["src/Screens/Registration/*"],
+      "detailsScreen/*": ["src/Screens/Details/*"],
       "utils/*": ["src/Common/Utils/*"],
     },                                        /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
@@ -63,7 +63,7 @@
     "skipLibCheck": false,                    /* Skip type checking of declaration files. */
     "resolveJsonModule": true                 /* Allows importing modules with a ‘.json’ extension, which is a common practice in node projects. */
 
-    /* Source Map Options */
+    /* Source MyMap Options */
     // "sourceRoot": "./",                    /* Specify the location where debugger should locate TypeScript files instead of source locations. */
     // "mapRoot": "./",                       /* Specify the location where debugger should locate map files instead of generated locations. */
     // "inlineSourceMap": true,               /* Emit a single file with source maps instead of having a separate file. */
@@ -75,5 +75,6 @@
   },
   "exclude": [
     "node_modules", "babel.config.js", "metro.config.js", "jest.config.js"
-  ]
+  ],
+  "include": ["node_modules/react-native-redash/lib/typescript/v1/index.d.ts"]
 }
