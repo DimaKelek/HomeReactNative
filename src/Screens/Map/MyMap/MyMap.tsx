@@ -2,10 +2,11 @@ import React, {FC, useState} from 'react';
 import MapView, {Circle, Marker} from 'react-native-maps';
 import {useComponentStyles} from 'hooks/Hooks';
 import {mapStyles} from './MyMap.styles';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import Slider from '@react-native-community/slider';
 import {MyButton} from 'components/MyButton/MyButton';
 import {MyMapType} from './MyMap.types';
+import {MySlider} from '../../../Common/Components/CustomSlider/MySlider';
 
 export const MyMap: FC<MyMapType> = ({searchAirports}) => {
   const Styles = useComponentStyles(mapStyles);
@@ -36,15 +37,7 @@ export const MyMap: FC<MyMapType> = ({searchAirports}) => {
         />
       </MapView>
       <View style={Styles.sliderContainer}>
-        <Slider
-          style={Styles.slider}
-          step={5}
-          onValueChange={setValue}
-          minimumValue={0}
-          maximumValue={1000000}
-          minimumTrackTintColor={'#57bd8a'}
-          maximumTrackTintColor={'#123'}
-        />
+        <MySlider onChange={setValue} maxValue={1000000} sliderHeight={250} />
       </View>
       <MyButton
         style={Styles.search}

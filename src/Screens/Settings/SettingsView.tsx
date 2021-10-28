@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 import {Text, TouchableHighlight, View} from 'react-native';
 import {ThemeBar} from 'themes/ThemeBar/ThemeBar';
 import {SettingsStyles} from './SettingsView.styles';
@@ -7,8 +7,6 @@ import {useTranslation} from 'react-i18next';
 import {SettingsViewType} from './Settings.types';
 import {DefaultAvatar} from 'Common/Icons/Svg/DefaultAvatar';
 import {MyButton} from 'components/MyButton/MyButton';
-import Slider from '@react-native-community/slider';
-import {MySlider} from 'settingsScreen/CustomSlider/MySlider';
 
 export const SettingsView: FC<SettingsViewType> = props => {
   const {changeAvatarHandler, avatar, userData, exitHandler} = props;
@@ -40,7 +38,6 @@ export const SettingsView: FC<SettingsViewType> = props => {
         </View>
       </View>
       <ThemeBar />
-      <MySlider />
       <MyButton title={t('Exit')} onPress={exitHandler} style={Styles.exit} />
     </View>
   );
