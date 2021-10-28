@@ -1,4 +1,4 @@
-import {SetErrorType, SetStatusType, SetUserDataType} from './types';
+import {SetErrorType, SetUserDataType} from './types';
 import {AuthReducerActions} from '../enum';
 
 export const setUserData: SetUserDataType = userData => {
@@ -7,8 +7,4 @@ export const setUserData: SetUserDataType = userData => {
 
 export const setError: SetErrorType = error => {
   return {type: AuthReducerActions.Error, error};
-};
-
-export const setAppStatus: SetStatusType = status => {
-  return {type: AuthReducerActions.Status, status};
 };

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GetAirportRequestType} from './types';
+import {GetAirportRequestType} from './Api.types';
 
 const instance = axios.create({
   baseURL: 'https://aerodatabox.p.rapidapi.com',

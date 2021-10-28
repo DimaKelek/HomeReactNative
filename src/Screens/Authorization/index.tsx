@@ -4,7 +4,7 @@ import {AuthView} from './AuthView';
 import {FormErrorsType, SignInFormType} from './Auth.types';
 import {signInUser} from 'sagas/sagaActions';
 import {selectError} from 'redux/Auth/selectors';
-import {AuthProps} from 'nav/types';
+import {AuthProps} from '../../Navigation/Navigation.types';
 import {Alert} from 'react-native';
 import {setError} from 'redux/Auth/actions';
 

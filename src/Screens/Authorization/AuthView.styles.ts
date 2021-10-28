@@ -1,5 +1,5 @@
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
-import {Theme} from 'themes/types';
+import {Theme} from '../../Common/Themes/Theme.types';
 
 type AuthScreenStylesType = {
   auth: ViewStyle;

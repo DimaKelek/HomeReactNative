@@ -1,5 +1,5 @@
 import {LIGHT_THEME} from './Light.Theme';
-import {ProvidedValue, Theme, ThemeProviderProps} from './types';
+import {ProvidedValue, Theme, ThemeProviderProps} from './Theme.types';
 import React, {
   createContext,
   memo,

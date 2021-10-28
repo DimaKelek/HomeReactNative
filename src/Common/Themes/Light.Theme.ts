@@ -1,4 +1,4 @@
-import {ColorTheme, Theme} from './types';
+import {ColorTheme, Theme} from './Theme.types';
 import {Themes} from './enum';
 
 const LIGHT_COLOR_THEME: ColorTheme = {

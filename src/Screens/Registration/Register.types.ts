@@ -1,8 +1,6 @@
-import {AuthErrorType} from 'redux/Auth/types';
-
 export type RegistrationViewPropsType = {
   validate: (values: SignUpFormType) => RegisterFormErrorsType;
-  error: AuthErrorType | null;
+  signUpHandler: (values: SignUpFormType) => void;
 };
 
 export type SignUpFormType = {

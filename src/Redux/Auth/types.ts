@@ -7,7 +7,6 @@ export type AuthActionsType =
 export type AuthStateType = {
   userData: UserType | null;
   error: AuthErrorType | null;
-  status: AuthStatusType;
 };
 
 export type SetUserDataType = (userData: UserType | null) => {
@@ -20,11 +19,6 @@ export type SetErrorType = (error: AuthErrorType | null) => {
   error: AuthErrorType | null;
 };
 
-export type SetStatusType = (status: AuthStatusType) => {
-  type: AuthReducerActions.Status;
-  status: AuthStatusType;
-};
-
 export type UserType = {
   firstName: string;
   lastName: string;
@@ -35,5 +29,3 @@ export type AuthErrorType = {
   code: string;
   message: string;
 };
-
-export type AuthStatusType = 'idle' | 'loading' | 'failed' | 'succeeded';

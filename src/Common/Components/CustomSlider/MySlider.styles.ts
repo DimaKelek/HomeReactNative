@@ -1,8 +1,8 @@
-import {Theme} from '../../Themes/types';
+import {Theme} from '../../Themes/Theme.types';
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {customSliderConstants} from '../../Constants/Сonstants';
 
-type MySliderStylesType = {
+export type MySliderStylesType = {
   bubble: ViewStyle;
   container: ViewStyle;
   slider: ViewStyle;

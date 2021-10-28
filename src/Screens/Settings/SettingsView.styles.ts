@@ -1,5 +1,5 @@
 import {ImageStyle, StyleSheet, TextStyle, ViewStyle} from 'react-native';
-import {Theme} from 'themes/types';
+import {Theme} from 'themes/Theme.types';
 
 type SettingsStylesType = {
   settings: ViewStyle;

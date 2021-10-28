@@ -1,5 +1,5 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {AuthStackType} from '../types';
+import {AuthStackType} from '../Navigation.types';
 import React from 'react';
 import {Screens} from '../enum';
 import {AuthScreen} from 'authScreen/index';

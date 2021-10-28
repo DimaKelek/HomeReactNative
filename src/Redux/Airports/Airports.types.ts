@@ -1,4 +1,4 @@
-import {AirportsResponseType} from 'Api/types';
+import {AirportsResponseType} from 'api/Api.types';
 import {AirportsReducerActions} from 'redux/enum';
 
 export type AirportStateType = {

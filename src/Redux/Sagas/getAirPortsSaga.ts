@@ -1,5 +1,5 @@
 import {call, put} from 'redux-saga/effects';
-import {airportApi} from 'Api/api';
+import {airportApi} from '../../Api/Api';
 import {GetAirportsType} from 'sagas/Sagas.types';
 import {setAirports} from 'redux/Airports/Airports.actions';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {MapProps} from 'nav/types';
+import {MapProps} from '../../Navigation/Navigation.types';
 import {MapsView} from './MapView';
 import {useDispatch} from 'react-redux';
 import {getAirports} from 'sagas/sagaActions';

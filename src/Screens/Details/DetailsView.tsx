@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import {useComponentStyles} from 'hooks/Hooks';
 import {detailsStyles} from './DetailsView.styles';
 import {useTranslation} from 'react-i18next';
@@ -6,10 +6,10 @@ import {Text, View} from 'react-native';
 import {DetailsViewPropsType} from './Details.types';
 import {IataSvg} from 'Common/Icons/Svg/IataSvg';
 
-export const DetailsView: FC<DetailsViewPropsType> = ({airport}) => {
+export const DetailsView: FC<DetailsViewPropsType> = memo(({airport}) => {
   const Styles = useComponentStyles(detailsStyles);
   const {t} = useTranslation();
-  console.log(airport);
+
   return (
     <View style={Styles.details}>
       <View style={Styles.ticket}>
@@ -24,4 +24,4 @@ export const DetailsView: FC<DetailsViewPropsType> = ({airport}) => {
       </View>
     </View>
   );
-};
+});

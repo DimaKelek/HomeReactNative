@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
-import {RegistrationProps} from 'nav/types';
+import {RegistrationProps} from '../../Navigation/Navigation.types';
 import {RegistrationView} from './RegistrationView';
 import {RegisterFormErrorsType, SignUpFormType} from './Register.types';
-import {useSelector} from 'react-redux';
-import {selectError} from 'redux/Auth/selectors';
+import {useDispatch} from 'react-redux';
+import {signUpUser} from '../../Redux/Sagas/sagaActions';
 
 export const RegistrationScreen: FC<RegistrationProps> = () => {
-  const error = useSelector(selectError);
+  const dispatch = useDispatch();
 
   const validate = (values: SignUpFormType) => {
     const errors: RegisterFormErrorsType = {};
@@ -35,5 +35,8 @@ export const RegistrationScreen: FC<RegistrationProps> = () => {
     }
     return errors;
   };
-  return <RegistrationView validate={validate} error={error} />;
+  const signUpHandler = (values: SignUpFormType) => {
+    dispatch(signUpUser(values));
+  };
+  return <RegistrationView validate={validate} signUpHandler={signUpHandler} />;
 };

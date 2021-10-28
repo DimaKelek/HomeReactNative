@@ -1,8 +1,8 @@
-import {AirportsResponseType} from 'Api/types';
+import {AirportsResponseType} from '../../../Api/Api.types';
 import {Animated} from 'react-native';
 
 export type AirportItemPropsType = {
-  y: Animated.Value;
+  scrollY: Animated.Value;
   index: number;
   airport: AirportsResponseType;
   onPressDetails: (airName: string) => void;

@@ -4,7 +4,7 @@ import {SignUpFormType} from 'registerScreen/Register.types';
 
 const baseRef = database().ref('/users');
 
-export const getFirebaseUserData = async (userID: string) => {
+export const getUserDataFirebase = async (userID: string) => {
   const value = await baseRef.child(userID).once('value');
   return value.val();
 };

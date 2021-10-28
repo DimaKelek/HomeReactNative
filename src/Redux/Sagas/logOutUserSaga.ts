@@ -1,5 +1,5 @@
 import {call, put} from 'redux-saga/effects';
-import {logOutFireBase} from 'Firebase/firebase';
+import {logOutFireBase} from 'firebase/firebase';
 import {setError, setUserData} from '../Auth/actions';
 
 export function* logOutUserSaga() {

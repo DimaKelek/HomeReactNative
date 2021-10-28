@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {DetailsProps} from 'nav/types';
+import {DetailsProps} from '../../Navigation/Navigation.types';
 import {DetailsView} from './DetailsView';
 import {useSelector} from 'react-redux';
 import {selectAirName, selectAirports} from 'redux/Airports/Airports.selectors';

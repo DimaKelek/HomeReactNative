@@ -1,6 +1,6 @@
 import {SagaActions} from '../enum';
 import {SignUpFormType} from 'registerScreen/Register.types';
-import {GetAirportRequestType} from "Api/types";
+import {GetAirportRequestType} from 'api/Api.types';
 
 export type SignInUserSagaAction = (
   email: string,
@@ -26,6 +26,6 @@ export type SignUpFirebaseSagaAction = (values: SignUpFormType) => {
 };
 
 export type GetAirportsType = (data: GetAirportRequestType) => {
-  type: SagaActions.Air;
+  type: SagaActions.GetAir;
   data: GetAirportRequestType;
 };

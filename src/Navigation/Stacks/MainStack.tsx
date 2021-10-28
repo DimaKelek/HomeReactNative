@@ -2,10 +2,10 @@ import {useTranslation} from 'react-i18next';
 import {Screens} from '../enum';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {StackNavigationType} from '../types';
+import {StackNavigationType} from '../Navigation.types';
 import {HomeScreen} from 'homeScreen/index';
 import {useComponentStyles} from 'hooks/Hooks';
-import {stacksStyles} from './styles';
+import {stacksStyles} from './Stack.styles';
 import {DetailsScreen} from 'detailsScreen/index';
 import {MapScreen} from 'Screens/Map';
 

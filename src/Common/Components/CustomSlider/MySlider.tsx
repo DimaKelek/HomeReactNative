@@ -1,10 +1,7 @@
-import React, {FC} from 'react';
-import {Dimensions, View} from 'react-native';
+import React, {FC, memo} from 'react';
+import {Dimensions} from 'react-native';
+import {PanGestureHandlerGestureEvent} from 'react-native-gesture-handler';
 import {
-  PanGestureHandler,
-  PanGestureHandlerGestureEvent,
-} from 'react-native-gesture-handler';
-import Animated, {
   runOnJS,
   useAnimatedGestureHandler,
   useAnimatedStyle,
@@ -13,22 +10,12 @@ import Animated, {
 import {mySliderStyles} from './MySlider.styles';
 import {useTheme} from 'themes/ThemeContext';
 import {customSliderConstants} from '../../Constants/Сonstants';
+import {MySliderView} from './index';
+import {SliderContextType, SliderPropsType} from './MySlider.types';
 
 const {height: screenHeight} = Dimensions.get('window');
 
-type SliderContextType = {
-  translateY: number;
-};
-
-type SliderPropsType = {
-  sliderHeight?: number;
-  onChange: (value: number) => void;
-  maxValue: number;
-  trackColor?: string;
-  bubbleColor?: string;
-};
-
-export const MySlider: FC<SliderPropsType> = props => {
+export const MySlider: FC<SliderPropsType> = memo(props => {
   const {sliderHeight, maxValue, onChange, bubbleColor, trackColor} = props;
   const {correctionValue} = customSliderConstants.functional;
   const height = sliderHeight ?? screenHeight - 250;
@@ -80,15 +67,10 @@ export const MySlider: FC<SliderPropsType> = props => {
   });
 
   return (
-    <View style={Styles.container}>
-      <View style={Styles.slider}>
-        <View style={Styles.track} />
-        <PanGestureHandler onGestureEvent={penGestureEvent}>
-          <Animated.View style={[Styles.bubbleWrapper, rStyle]}>
-            <View style={Styles.bubble} />
-          </Animated.View>
-        </PanGestureHandler>
-      </View>
-    </View>
+    <MySliderView
+      Styles={Styles}
+      rStyle={rStyle}
+      penGestureEvent={penGestureEvent}
+    />
   );
-};
+});

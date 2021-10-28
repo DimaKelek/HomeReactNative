@@ -1,5 +1,5 @@
-import {Theme} from 'themes/types';
-import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
+import {Theme} from '../../../Common/Themes/Theme.types';
+import {Dimensions, StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 type AirportItemStylesType = {
   container: ViewStyle;
@@ -7,10 +7,12 @@ type AirportItemStylesType = {
   name: TextStyle;
 };
 
+const {height} = Dimensions.get('window');
+
 export const airportItemStyles = (theme: Theme) => {
   return StyleSheet.create<AirportItemStylesType>({
     container: {
-      height: 50,
+      height: height * 0.1,
       width: '93%',
       marginLeft: 13,
       position: 'relative',
@@ -20,6 +22,7 @@ export const airportItemStyles = (theme: Theme) => {
       marginBottom: 15,
       padding: 10,
       backgroundColor: theme.color.todoBackground,
+      opacity: 0.9,
     },
     countryCode: {
       position: 'absolute',

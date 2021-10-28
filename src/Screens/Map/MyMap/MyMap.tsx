@@ -1,16 +1,16 @@
-import React, {FC, useState} from 'react';
+import React, {FC, memo, useState} from 'react';
 import MapView, {Circle, Marker} from 'react-native-maps';
 import {useComponentStyles} from 'hooks/Hooks';
 import {mapStyles} from './MyMap.styles';
 import {View} from 'react-native';
-import Slider from '@react-native-community/slider';
 import {MyButton} from 'components/MyButton/MyButton';
 import {MyMapType} from './MyMap.types';
 import {MySlider} from '../../../Common/Components/CustomSlider/MySlider';
 
-export const MyMap: FC<MyMapType> = ({searchAirports}) => {
+export const MyMap: FC<MyMapType> = memo(({searchAirports}) => {
   const Styles = useComponentStyles(mapStyles);
   const [value, setValue] = useState<number>(0);
+
   return (
     <View style={Styles.mapContainer}>
       <MapView
@@ -41,9 +41,9 @@ export const MyMap: FC<MyMapType> = ({searchAirports}) => {
       </View>
       <MyButton
         style={Styles.search}
-        title={`Search ${Math.ceil(value / 1000) + ' Km'}`}
+        title={`Search ${Math.round(value / 1000) + ' Km'}`}
         onPress={() => searchAirports(value)}
       />
     </View>
   );
-};
+});

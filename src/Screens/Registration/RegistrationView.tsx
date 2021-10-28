@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import {useComponentStyles} from 'hooks/Hooks';
 import {registrationStyles} from './RegistrationView.styles';
 import {useTranslation} from 'react-i18next';
@@ -6,15 +6,13 @@ import {Button, Text, View} from 'react-native';
 import {RegistrationViewPropsType} from './Register.types';
 import {MyInput} from 'components/Input/MyInput';
 import {Formik} from 'formik';
-import {useDispatch} from 'react-redux';
-import {signUpUser} from 'sagas/sagaActions';
 
-export const RegistrationView: FC<RegistrationViewPropsType> = props => {
-  const {validate} = props;
+export const RegistrationView: FC<RegistrationViewPropsType> = memo(props => {
+  const {validate, signUpHandler} = props;
   const Styles = useComponentStyles(registrationStyles);
   const {t} = useTranslation();
-  const dispatch = useDispatch();
-  let initialValues = {
+
+  const initialValues = {
     firstName: '',
     lastName: '',
     email: '',
@@ -25,12 +23,9 @@ export const RegistrationView: FC<RegistrationViewPropsType> = props => {
     <View style={Styles.registration}>
       <Formik
         initialValues={initialValues}
-        onSubmit={values => {
-          dispatch(signUpUser(values));
-        }}
+        onSubmit={signUpHandler}
         validate={validate}>
         {({handleChange, handleSubmit, errors, touched, values}) => {
-          console.log(errors);
           return (
             <View style={Styles.registration}>
               <Text style={Styles.title}>{t('Sign Up')}</Text>
@@ -116,4 +111,4 @@ export const RegistrationView: FC<RegistrationViewPropsType> = props => {
       </Formik>
     </View>
   );
-};
+});

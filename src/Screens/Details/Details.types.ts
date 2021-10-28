@@ -1,4 +1,4 @@
-import {AirportsResponseType} from 'Api/types';
+import {AirportsResponseType} from '../../Api/Api.types';
 
 export type DetailsViewPropsType = {
   airport: AirportsResponseType | undefined;

@@ -1,4 +1,4 @@
-import {Theme} from 'themes/types';
+import {Theme} from '../../Common/Themes/Theme.types';
 import {StyleSheet} from 'react-native';
 
 export const stacksStyles = (theme: Theme) => {

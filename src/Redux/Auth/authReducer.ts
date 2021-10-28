@@ -4,7 +4,6 @@ import {AuthReducerActions} from '../enum';
 export const initialState: AuthStateType = {
   userData: null,
   error: null,
-  status: 'idle',
 };
 
 export const authReducer = (

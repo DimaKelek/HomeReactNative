@@ -1,10 +1,10 @@
 import {StyleSheet, ViewStyle} from 'react-native';
-import {Theme} from 'themes/types';
+import {Theme} from '../../Common/Themes/Theme.types';
 
 type HomeStylesType = {
   home: ViewStyle;
   mapButton: ViewStyle;
-  flatlist: ViewStyle;
+  flatList: ViewStyle;
 };
 
 export const homeStyles = (theme: Theme) => {
@@ -21,7 +21,7 @@ export const homeStyles = (theme: Theme) => {
       right: 10,
       top: 10,
     },
-    flatlist: {
+    flatList: {
       width: '100%',
     },
   });
