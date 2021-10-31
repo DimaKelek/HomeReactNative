@@ -20,10 +20,10 @@ export const HomeView: FC<HomeViewPropsType> = memo(props => {
     const {index, item} = info;
     return (
       <AirportItem
-        airport={item}
-        onPressDetails={onPressDetails}
-        scrollY={scrollY}
-        index={index}
+          airport={item}
+          onPressDetails={onPressDetails}
+          scrollY={scrollY}
+          index={index}
       />
     );
   };
